@@ -8,8 +8,7 @@
 
 void print_times_table(int n)
 {
-	int prod, mult, num;
-	
+i	int prod, mult, num;
 	if (n <= 15 && n >= 0)
 	{
 		for (num = 0; num <= n; ++num)
@@ -19,14 +18,11 @@ void print_times_table(int n)
 			{
 				_putchar(',');
 				_putchar(' ');
-				
 				prod = num * mult;
-				
 				if (prod <= 9)
 					_putchar(' ');
 				if (prod <= 99)
 					_putchar(' ');
-				
 				if (prod >= 100)
 				{
 					_putchar((prod / 100) + 48);
