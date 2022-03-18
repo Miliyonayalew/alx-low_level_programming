@@ -1,26 +1,30 @@
-#include"main.h"
+#include "main.h"
 
 /**
- * print_diagonal - print a diagonal line
+ * print_square - draws a square
+ * @size: length and width of square
  *
- * @n: is the number of times the \ character
- *     should be printed
-*/
+ * Return: void
+ */
 
-void print_diagonal(int n)
+void print_square(int size)
 {
-	int postn, space;
+	int row;
+	int column;
 
-	if (n <= 0)
-		_putchar('\n');
-	else
+	if (size > 0)
 	{
-		for (postn = 1; postn <= n; ++postn)
+		for (row = 0; row < size; row++)
 		{
-			for (space = 1; space <= postn; ++space)
-				_putchar(' ');
-			_putchar(92); /*is equal to '/' char*/
+			for (column = 0; column < size; column++)
+			{
+				_putchar('#');
+			}
 			_putchar('\n');
 		}
+	}
+	else
+	{
+		_putchar('\n');
 	}
 }
