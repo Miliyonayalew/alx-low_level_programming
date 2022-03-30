@@ -1,33 +1,38 @@
-#include "holberton.h"
-
-int actual_sqrt_recursion(int n, int i);
+#include "main.h"
 
 /**
- * _sqrt_recursion - returns the natural square root of a number
- * @n: number to calculate the square root of
+ * _sqrt_recursion - function that returns the natural
+ * square root of a number
+ * @n: input number
  *
- * Return: the resulting square root
+ * Return: int
  */
+
 int _sqrt_recursion(int n)
 {
+	if (n == 0)
+		return (0);
+	if (n == 1)
+		return (1);
 	if (n < 0)
 		return (-1);
-	return (actual_sqrt_recursion(n, 0));
+	return (getNumSqr(n, 1));
 }
 
 /**
- * actual_sqrt_recursion - recurses to find the natural
- * square root of a number
- * @n: number to calculate the sqaure root of
- * @i: iterator
+ * getNumSqr - function that gets de num sqroot
  *
- * Return: the resulting square root
+ * @num: input number
+ * @i: Counter variable
+ * Return: int
  */
-int actual_sqrt_recursion(int n, int i)
+
+int getNumSqr(int num, int i)
 {
-	if (i * i > n)
-		return (-1);
-	if (i * i == n)
+	if (num == (i * i))
 		return (i);
-	return (actual_sqrt_recursion(n, i + 1));
+	else if (num > (i * i))
+		return (getNumSqr(num, i + 1));
+	else
+		return (-1);
 }
